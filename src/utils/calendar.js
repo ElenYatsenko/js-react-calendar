@@ -1,5 +1,4 @@
 import {
-  getDaysInMonth,
   startOfMonth,
   endOfMonth,
   eachDayOfInterval,
@@ -13,11 +12,9 @@ import {
 } from "date-fns";
 
 export function getMouthData(date) {
+  //1. получить границы текущего месяца
   const startMon = startOfMonth(date);
   const finishMon = endOfMonth(date);
-
-  //1. сколько дней в текущем месяце
-  const countDayInMonth = getDaysInMonth(date);
 
   //2. заполнить массив данными
   const arrayDaysRange = eachDayOfInterval({ start: startMon, end: finishMon });
@@ -31,7 +28,7 @@ export function getMouthData(date) {
   //5. последний день воскресения
   const isSundayDay = nextSunday(finishMon);
 
-  //6. разница дней в слудующем месяце "МИНУС получаем"
+  //6. разница дней в слудующем месяце
   const differenceDaysNext = differenceInDays(isSundayDay, finishMon);
 
   //7.  добавить в начало массива дни

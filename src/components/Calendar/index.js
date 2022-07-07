@@ -1,22 +1,9 @@
 import React, { Component } from "react";
-import { add, format, isSameMonth } from "date-fns";
+import { add, format } from "date-fns";
 import { sub } from "date-fns/esm";
-import * as calendar from "./calendar";
+import CalendarMonth from "./CalendarMonth";
+import CalendarToday from "./CalendarToday";
 import styles from "./Calendar.module.scss";
-
-const DaysOfWeek = () => {
-  return (
-    <div className={styles["seven-of-line"]}>
-      <span>s</span>
-      <span>m</span>
-      <span>t</span>
-      <span>w</span>
-      <span>t</span>
-      <span>f</span>
-      <span>s</span>
-    </div>
-  );
-};
 
 class Calendar extends Component {
   constructor(props) {
@@ -38,9 +25,9 @@ class Calendar extends Component {
 
   render() {
     const { date } = this.state;
-    const mounthData = calendar.getMouthData(date);
     return (
-      <div>
+      <div className={styles["container-calendar"]}>
+        <CalendarToday date={date} />
         <header>
           <h2>{format(date, "MMMM yyyy")}</h2>
           <button onClick={() => this.handlerBtnPrev({ months: 1 })}>
@@ -51,23 +38,7 @@ class Calendar extends Component {
           </button>
         </header>
         <div>
-          <div>
-            <DaysOfWeek />
-          </div>
-          <div className={styles["seven-of-line"]}>
-            {mounthData.map((day, index) => (
-              <span
-                className={
-                  isSameMonth(date, day)
-                    ? styles["current-days"]
-                    : styles["prev-next-days"]
-                }
-                key={index}
-              >
-                {format(day, "dd")}
-              </span>
-            ))}
-          </div>
+          <CalendarMonth date={date} />
         </div>
       </div>
     );

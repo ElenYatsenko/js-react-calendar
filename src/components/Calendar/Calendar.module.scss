@@ -1,12 +1,6 @@
-.seven-of-line {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-}
-
-.prev-next-days {
-  color: grey;
-}
-
-.current-days {
-  color: black;
+.container-calendar {
+  width: 1000px;
+  height: 500px;
+  margin: 15% auto;
+  border: 3px solid #009991;
 }

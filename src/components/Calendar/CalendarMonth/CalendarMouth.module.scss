@@ -1,0 +1,12 @@
+.seven-of-line {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.prev-next-days {
+  color: grey;
+}
+
+.current-days {
+  color: black;
+}
