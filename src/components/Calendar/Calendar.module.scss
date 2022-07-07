@@ -1,6 +1,11 @@
 .container-calendar {
   width: 1000px;
   height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
   margin: 15% auto;
   border: 3px solid #009991;
 }

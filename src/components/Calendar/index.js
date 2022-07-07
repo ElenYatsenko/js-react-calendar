@@ -27,7 +27,7 @@ class Calendar extends Component {
     const { date } = this.state;
     return (
       <div className={styles["container-calendar"]}>
-        <CalendarToday date={date} />
+        <CalendarToday />
         <header>
           <h2>{format(date, "MMMM yyyy")}</h2>
           <button onClick={() => this.handlerBtnPrev({ months: 1 })}>
