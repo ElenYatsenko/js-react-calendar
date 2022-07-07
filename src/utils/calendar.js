@@ -28,7 +28,7 @@ export function getMouthData(date) {
   //5. последний день воскресения
   const isSundayDay = nextSunday(finishMon);
 
-  //6. разница дней в слудующем месяце
+  //6. разница дней в следующем месяце
   const differenceDaysNext = differenceInDays(isSundayDay, finishMon);
 
   //7.  добавить в начало массива дни

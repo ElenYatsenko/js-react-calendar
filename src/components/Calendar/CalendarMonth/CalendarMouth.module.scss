@@ -1,12 +1,32 @@
 .seven-of-line {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  margin: 30px;
 }
 
 .prev-next-days {
-  color: grey;
+  color: #b7b7b7;
 }
 
 .current-days {
-  color: black;
+  color: grey;
+}
+
+.prev-next-days,
+.current-days,
+.name-of-week {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 8px;
+  text-align: center;
+}
+
+.name-of-week {
+  color: #eb1b57;
+  text-transform: uppercase;
+}
+.isToday {
+  color: #eb1b57;
+  border: 8px solid #eb1b57;
+  border-radius: 50%;
 }

@@ -27,17 +27,18 @@ class Calendar extends Component {
     const { date } = this.state;
     return (
       <div className={styles["container-calendar"]}>
-        <CalendarToday />
-        <header>
-          <h2>{format(date, "MMMM yyyy")}</h2>
-          <button onClick={() => this.handlerBtnPrev({ months: 1 })}>
-            &lt;
-          </button>
-          <button onClick={() => this.handlerBtnNext({ months: 1 })}>
-            &gt;
-          </button>
-        </header>
-        <div>
+        <CalendarToday  />
+        <div className={styles.wrapper}>
+          <header className={styles.header}>
+            <h2>{format(date, "MMMM yyyy")}</h2>
+            <button className={styles.button} onClick={() => this.handlerBtnPrev({ months: 1 })}>
+              &lt;
+            </button>
+            <button className={styles.button} onClick={() => this.handlerBtnNext({ months: 1 })}>
+              &gt;
+            </button>
+          </header>
+
           <CalendarMonth date={date} />
         </div>
       </div>

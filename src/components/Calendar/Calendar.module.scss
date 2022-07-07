@@ -1,11 +1,36 @@
 .container-calendar {
-  width: 1000px;
-  height: 500px;
+  width: 1200px;
+  height: 600px;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
+  align-items: center;
 
   margin: 15% auto;
-  border: 3px solid #009991;
+  border: 20px solid #009991;
+
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.wrapper {
+  width: 50%;
+}
+
+.header {
+  text-align: center;
+  text-transform: uppercase;
+  color: #009991;
+  font-size: 30px;
+}
+
+.button {
+  background-color: #38cec4;
+  border: none;
+  color: white;
+  padding: 7px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2rem;
 }
