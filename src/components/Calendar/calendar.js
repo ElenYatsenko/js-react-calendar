@@ -2,12 +2,8 @@ import {
   getDaysInMonth,
   startOfMonth,
   endOfMonth,
-  format,
   eachDayOfInterval,
-  getISODay,
-  getDay,
   isMonday,
-  getWeeksInMonth,
   subDays,
   previousMonday,
   differenceInDays,
@@ -17,16 +13,10 @@ import {
 } from "date-fns";
 
 export function getMouthData(date) {
-  const result = [];
   const startMon = startOfMonth(date);
   const finishMon = endOfMonth(date);
-  const countWeekInMonth = getWeeksInMonth(date);
 
-  // + разделить массив на недели
-  // arrayDays.splice(0, 7);
-  // - разделить массив на недели
-
-  //1. сколько дней существует в текущем месяце
+  //1. сколько дней в текущем месяце
   const countDayInMonth = getDaysInMonth(date);
 
   //2. заполнить массив данными
@@ -52,7 +42,6 @@ export function getMouthData(date) {
       start: countDaysPrev,
       end: subDays(startMon, 1),
     });
-    // arrayAddPrevDays = arrayDaysPrev.concat(arrayDaysRange);
   }
 
   //8.  добавить в конец массива дни
@@ -63,7 +52,6 @@ export function getMouthData(date) {
       start: addDays(finishMon, 1),
       end: countDaysNext,
     });
-    // arrayAddNextDays = arrayAddPrevDays.concat(arrayDaysNext);
   }
 
   const arrayDaysAll = [

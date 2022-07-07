@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { add, format, getWeeksInMonth } from "date-fns";
+import { add, format, isSameMonth } from "date-fns";
 import { sub } from "date-fns/esm";
 import * as calendar from "./calendar";
 import styles from "./Calendar.module.scss";
 
 const DaysOfWeek = () => {
   return (
-    <span className={styles["seven-of-line"]}>
+    <div className={styles["seven-of-line"]}>
       <span>s</span>
       <span>m</span>
       <span>t</span>
@@ -14,7 +14,7 @@ const DaysOfWeek = () => {
       <span>t</span>
       <span>f</span>
       <span>s</span>
-    </span>
+    </div>
   );
 };
 
@@ -55,8 +55,17 @@ class Calendar extends Component {
             <DaysOfWeek />
           </div>
           <div className={styles["seven-of-line"]}>
-            {mounthData.map((week, index) => (
-              <span key={index}>{format(week, "dd")}</span>
+            {mounthData.map((day, index) => (
+              <span
+                className={
+                  isSameMonth(date, day)
+                    ? styles["current-days"]
+                    : styles["prev-next-days"]
+                }
+                key={index}
+              >
+                {format(day, "dd")}
+              </span>
             ))}
           </div>
         </div>
